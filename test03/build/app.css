@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-dic-2015, 16.16.12
+    Author     : maurizio
+*/
+
+.red {
+    background-color: #ff3333;
+}
+
+.green {
+    background-color: #006666;
+}
+
+.active {
+    background-color: #3399ff;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.overlay-content {
+  padding-top: 50px;
+  width: 80%;
+  height: 2000px;
+  margin: 2em auto;
+  position: relative;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 5px 0 black;
+     -moz-box-shadow: 1px 1px 5px 0 black;
+          box-shadow: 1px 1px 5px 0 black;
+}
+
+.overlay-close {
+  color: black;
+  text-decoration: none;
+  padding: 0.5em;
+  position: fixed;
+  top: 50px;
+  right: 1.5em;
+  display: block;
+  border-radius: 0 0 3px 3px ;
+  background-color: rgba(255,255,255,0.8);
+}
