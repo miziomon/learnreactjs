@@ -1,30 +1,20 @@
 // ------------ box ------------- //
 var ComponentBox = React.createClass({
 
-
-    
-
     handleComponentClick: function( component ) {
-        console.log("componet click ");
-        console.log( component );
-
         this.refs['overlay'].active();
-
     },
 
     render: function() {
         return (
-
-        <div>
-        <Component class="red" onComponentClick={this.handleComponentClick}/>
-        <Component class="green" onComponentClick={this.handleComponentClick} />
-        <Overlay ref="overlay" class="overlay" />
-
-        </div>
+            <div>
+            <Component class="red" onComponentClick={this.handleComponentClick}/>
+            <Component class="green" onComponentClick={this.handleComponentClick} />
+            <Overlay ref="overlay" class="overlay" />
+            </div>
         );
       }
 });
-
 
 
 
@@ -33,47 +23,34 @@ var ComponentBox = React.createClass({
 
 var Component = React.createClass({
 
+    getInitialState: function() {
+        return {
+            class: this.props.class,
+            text: ""
+            };
+      },
 
-getInitialState: function() {
-    return {
-        class: this.props.class,
-        text: ""
-        };
-  },
-
-handleClick: function(e) {
-    e.preventDefault();
-    
-    //this.setState({class: "active"});
-    
-    
-    
-    this.props.onComponentClick( this.state.class );
-
-    
-
-    console.log( "click " + this.state.class );
-  },
+    handleClick: function(e) {
+        e.preventDefault();
+        this.props.onComponentClick( this.state.class );
+        console.log( "click " + this.state.class );
+      },
 
 
-handleChange: function(e) {
-    this.setState({text: e.target.value });
+    handleChange: function(e) {
+        this.setState({text: e.target.value });
+    },
 
-
-},
-
-  render: function() {
-    return (
-      <div className ={ this.state.class }>
-           
-        <h1 >Component</h1>
-        <input type="text" onChange={this.handleChange} />
-        <p>{this.state.text}</p>
-        <a onClick={this.handleClick}>active</a>
-        
-      </div>
-    );
-  }
+      render: function() {
+        return (
+          <div className ={ this.state.class }>
+            <h1 >Component</h1>
+            <input type="text" onChange={this.handleChange} />
+            <p>{this.state.text}</p>
+            <a onClick={this.handleClick}>active</a>
+          </div>
+        );
+      }
 });
 
 
