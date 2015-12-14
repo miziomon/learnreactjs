@@ -117,6 +117,8 @@ var Comment = React.createClass({
   }
 });
 
+// -------------------------------
+
 var CommentBox = React.createClass({
   displayName: "CommentBox",
 
@@ -138,7 +140,7 @@ var CommentBox = React.createClass({
 
   loadCommentsFromServer: function () {
 
-    this.setState({ data: [{ id: 1, author: "Pete Hunt", text: "This is one comment" }, { id: 2, author: "Jordan Walke", text: "This is *another* comment" }, { id: 3, author: "fdsf asd ", text: "This is *another* comment" }, { id: 4, author: "dfsaf sa ds", text: "This is *another* comment" }] });
+    this.setState({ data: [{ id: 1, author: "Pete Hunt", text: "This is one comment" }, { id: 2, author: "Jordan Walke", text: "This is *another* comment" }, { id: 3, author: "fdsf asd ", text: "This is *another* comment" }, { id: 4, author: "dfsaf sa ds", text: "This is *another* comment" }, { id: 5, author: "davide", text: "pppppppppppppppppp" }] });
 
     console.log("polling from server");
   },
