@@ -3,9 +3,6 @@ var ComponentBox = React.createClass({
     displayName: "ComponentBox",
 
     handleComponentClick: function (component) {
-        console.log("componet click ");
-        console.log(component);
-
         this.refs['overlay'].active();
     },
 
@@ -34,11 +31,7 @@ var Component = React.createClass({
 
     handleClick: function (e) {
         e.preventDefault();
-
-        //this.setState({class: "active"});
-
         this.props.onComponentClick(this.state.class);
-
         console.log("click " + this.state.class);
     },
 
@@ -90,9 +83,7 @@ var Overlay = React.createClass({
     },
 
     handleClose: function (e) {
-
         e.preventDefault();
-
         if (e.target.className == "overlay active" || e.target.parentNode.className == "overlay-close") {
             this.setState({ class: "overlay" });
             this.setState({ content: "" });

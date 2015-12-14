@@ -61,6 +61,7 @@ var CommentForm = React.createClass({
     }
     
     console.log("commit sono nel form");
+
     this.props.onCommentSubmit({author: author, text: text});
 
     this.setState({author: '', text: ''});
